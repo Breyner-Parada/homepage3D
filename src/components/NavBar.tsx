@@ -21,8 +21,8 @@ const Navbar = (): JSX.Element => {
           }}
         >
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer">
-            Breyner Parada |{" "}
+          <p className="flex text-white text-[18px] font-bold cursor-pointer">
+            Breyner Parada | &nbsp;
             <span className="sm:block hidden"> Full Stack Developer</span>
           </p>
         </Link>
@@ -39,6 +39,7 @@ const Navbar = (): JSX.Element => {
             </li>
           ))}
         </ul>
+
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
             src={toggle ? close : menu}
@@ -46,6 +47,7 @@ const Navbar = (): JSX.Element => {
             className="w-7 h-7 object-contain cursor-pointer"
             onClick={() => setToggle((prev) => !prev)}
           />
+          
           <div
             className={`${
               !toggle ? "hidden" : "flex"
