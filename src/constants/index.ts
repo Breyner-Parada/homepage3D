@@ -15,14 +15,22 @@ import {
     git,
     figma,
     docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
-    carrent,
-    jobit,
-    tripguide,
     threejs,
+    self_employed,
+    utd,
+    appxcale,
+    quepar,
+    api,
+    materialui,
+    next,
+    postgresql,
+    sass,
+    todo,
+    chatapp,
+    dashboard,
+    flashback,
+    movieapp,
+    toctoc,
   } from "../assets";
   
   export const navLinks = [
@@ -54,7 +62,7 @@ import {
       icon: backend,
     },
     {
-      title: "Content Creator",
+      title: "MERN Stack Developer",
       icon: creator,
     },
   ];
@@ -105,66 +113,85 @@ import {
       icon: git,
     },
     {
-      name: "figma",
-      icon: figma,
-    },
-    {
       name: "docker",
       icon: docker,
     },
+    {
+      name: 'api rest',
+      icon: api,
+    },
+    {
+      name: 'material ui',
+      icon: materialui,
+    },
+    {
+      name: 'next js',
+      icon: next,
+    },
+    {
+      name: 'postgresql',
+      icon: postgresql,
+    },
+    {
+      name: 'sass',
+      icon: sass,
+    },
+
   ];
   
   const experiences = [
     {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
+      title: "Freelancer",
+      company_name: "Self-employed",
+      icon: self_employed,
       iconBg: "#383E56",
-      date: "March 2020 - April 2021",
+      date: "Oct 2021 - Sep 2022",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+        "Doing research and identifying new opportunities and potential new markets.",
+        "Learning and making use of new technologies",
         "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "In continuous learning and improvement of my skills and knowledge in the area of ​​web development and mobile development.",
       ],
     },
     {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
+      title: "Backend Developer",
+      company_name: "Un Toque Digital",
+      icon: utd,
       iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
+      date: "Sep 2022 - Oct 2022",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
+        "Connect the application with the database through the API and WebSockets.",
         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Build reusable code and libraries for future use.",
+        "Build and maintain high performance, reusable, and reliable code.",
+        "Build microservices using Node.js and Express.js."
       ],
     },
     {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
+      title: "Web Developer and Mobile Developer",
+      company_name: "appXcale",
+      icon: appxcale,
       iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
+      date: "Oct 2022 - Mar 2023",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
+        "Developing and maintaining web applications and mobile apps using NextJs, React Native and other related technologies.",
         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
         "Participating in code reviews and providing constructive feedback to other developers.",
+        "Build and maintain high performance, reusable, and reliable code.",
       ],
     },
     {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
+      title: "Frontend Developer",
+      company_name: "QuePar Solutions",
+      icon: quepar,
       iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
+      date: "Mar 2023 - Present",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
+        "Developing and maintaining web applications using React.js, NextJs and other related technologies.",
         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
         "Implementing responsive design and ensuring cross-browser compatibility.",
         "Participating in code reviews and providing constructive feedback to other developers.",
+        "Build and maintain high performance, reusable, and reliable code.",
       ],
     },
   ];
@@ -172,56 +199,41 @@ import {
   const testimonials = [
     {
       testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
+        "Support Breyner in his programming career was really easy, He understood everything I taught him.",
+      name: "Andrés Quintero",
+      designation: "Data Scientist",
+      company: "NatGeo",
       image: "https://randomuser.me/api/portraits/women/4.jpg",
     },
     {
       testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
+        "Working with Breyner was a pleasure, he is a very responsible person and he is always willing to learn new things.",
+      name: "Rafael Quiroga",
+      designation: "Full Stack Developer",
+      company: "appXcale",
       image: "https://randomuser.me/api/portraits/men/5.jpg",
-    },
-    {
-      testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
     },
   ];
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "TODO App",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "Make your tasks easier, add tasks, check them and when the tasks are done if you want, just delete them and make more.",
       tags: [
         {
           name: "react",
           color: "blue-text-gradient",
         },
-        {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: todo,
+      source_code_link: "https://github.com/Breyner-Parada/reactjs",
+      live_link: 'https://breyner-parada.github.io/reactjs'
     },
     {
-      name: "Job IT",
+      name: "Movie App",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "Find information of your favorite movies, see and search what movies are trending daily, make with The MovieDB API.",
       tags: [
         {
           name: "react",
@@ -231,34 +243,98 @@ import {
           name: "restapi",
           color: "green-text-gradient",
         },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
       ],
-      image: jobit,
-      source_code_link: "https://github.com/",
+      image: movieapp,
+      source_code_link: "https://github.com/Breyner-Parada/movieapp",
+      live_link: 'https://breyner-parada.github.io/movieapp'
     },
     {
-      name: "Trip Guide",
+      name: "Chat App",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Create a room and start chatting with your friends in this simple web chat app",
       tags: [
         {
-          name: "nextjs",
+          name: "reactjs",
           color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
         },
         {
           name: "css",
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+      image: chatapp,
+      source_code_link: "https://github.com/Breyner-Parada/chatapp",
+      live_link: 'https://youwannatalk.netlify.app'
+    },
+    {
+      name: "FlashBack App",
+      description:
+        "Create, edit, delete, share, like and comment your own memories and comment, like others memories in this mini social media.",
+      tags: [
+        {
+          name: "reactjs",
+          color: "blue-text-gradient",
+        },
+        {
+          name:'mongodb',
+          color:'green-text-gradient'
+        },
+        {
+          name: "sass",
+          color: "pink-text-gradient",
+        },
+        {
+          name: "materialui",
+          color: "blue-text-gradient",
+        },
+      ],
+      image: flashback,
+      source_code_link: "https://github.com/Breyner-Parada/flashback",
+      live_link: 'https://breyner-parada.github.io/flashback'
+    },
+    {
+      name: "Toc Toc App",
+      description:
+        "Social media TikTok clone sign up and share, comment, search and like videos from others",
+      tags: [
+        {
+          name: "nextjs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "sanity",
+          color: "green-text-gradient",
+        },
+        {
+          name: "tailwindcss",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: toctoc,
+      source_code_link: "https://github.com/Breyner-Parada/toctoc",
+      live_link: 'https://toctoc-ten.vercel.app/'
+    },
+    {
+      name: "Dashboard App",
+      description:
+        "A template admin dashboard using syncfusion as main charts components",
+      tags: [
+        {
+          name: "reactjs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "syncfusion",
+          color: "green-text-gradient",
+        },
+        {
+          name: "tailwindcss",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: dashboard,
+      source_code_link: "https://github.com/Breyner-Parada/dashboard",
+      live_link: 'https://my-tablero.netlify.app/'
     },
   ];
   

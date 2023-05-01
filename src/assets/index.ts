@@ -20,15 +20,23 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import api from "./tech/api.png";
+import materialui from "./tech/mu5.png";
+import next from "./tech/next.png";
+import postgresql from "./tech/postgresql.png";
+import sass from "./tech/sass.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import self_employed from "./company/self-employed.png";
+import utd from "./company/UTD.png";
+import appxcale from "./company/appxcale.png";
+import quepar from "./company/quepar.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import todo from './TODOs.png';
+import chatapp from './chatapp.png';
+import dashboard from './Dashboard.png';
+import flashback from './Flashback.png';
+import movieapp from './MovieApp.png';
+import toctoc from './Toctoc.png';
 
 export {
   logo,
@@ -52,11 +60,19 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
+  self_employed,
+  utd,
+  appxcale,
+  quepar,
+  api,
+  materialui,
+  next,
+  postgresql,
+  sass,
+  todo,
+  chatapp,
+  dashboard,
+  flashback,
+  movieapp,
+  toctoc
 };

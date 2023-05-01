@@ -10,7 +10,11 @@ import {
 
 import CanvasLoader from "../Loader";
 
-const Ball = (props) => {
+interface BallProps {
+  icon: string;
+}
+
+const Ball = (props: any) => {
   const [decal] = useTexture([props.imgUrl]);
 
   return (
@@ -37,7 +41,7 @@ const Ball = (props) => {
   );
 };
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = ({ icon }: BallProps) => {
   return (
     <Canvas
       frameloop='demand'

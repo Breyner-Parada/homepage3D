@@ -16,7 +16,6 @@ const Hero = (): JSX.Element => {
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>Hi,👋 I'm <span className='text-[#915eff]'>Breyner Parada</span></h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            {/* I'm a <span className='text-[#915eff]'>Metallurgical Engineer</span> from <span className='text-[#915eff]'>Colombia</span>. I'm a <span className='text-[#915eff]'>Full Stack Developer</span> who is passionate about making open-source more accessible, creating technology to elevate people, and building community. Some technologies I enjoy working with include ReactJS, NodeJS, NextJS and much more. */}
             I'm a self-taught <br /> <span className='text-[#915eff]'>Full Stack Developer.</span> 
           </p>
         </div>
