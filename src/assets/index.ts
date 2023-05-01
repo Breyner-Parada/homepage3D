@@ -36,7 +36,7 @@ import chatapp from './chatapp.png';
 import dashboard from './Dashboard.png';
 import flashback from './Flashback.png';
 import movieapp from './MovieApp.png';
-import toctoc from './Toctoc.png';
+import toctoc from './TocToc.png';
 
 export {
   logo,
