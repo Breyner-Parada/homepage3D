@@ -8,7 +8,7 @@ type ComputerProps = {
 };
 
 const Computer = ({ isMobile }: ComputerProps): JSX.Element => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF("../../../public/desktop_pc/scene.gltf");
 
   return (
     <mesh>
@@ -23,7 +23,7 @@ const Computer = ({ isMobile }: ComputerProps): JSX.Element => {
       />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.6 : 0.75}
+        scale={isMobile ? 0.5 : 0.75}
         position={isMobile ? [0, -3, -1] : [0, -3.25, -1.7]}
         rotation={[-0.01, -0.2, -0.1]}
       />
@@ -50,7 +50,6 @@ const ComputersCanvas = (): JSX.Element => {
       frameloop="demand"
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls

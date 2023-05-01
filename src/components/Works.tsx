@@ -23,7 +23,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <div>
       <Tilt className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-[300px] mr-3">
         <div className="relative w-full h-[230px]">
           <img
@@ -56,7 +56,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           ))}
         </div>
       </Tilt>
-    </motion.div>
+    </div>
   );
 };
 
