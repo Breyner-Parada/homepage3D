@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
@@ -17,15 +17,20 @@ interface ProjectCardProps {
     }[];
     image: string;
     source_code_link: string;
+    live_link: string;
   };
   index: number;
+  id: string;
 }
 
-const ProjectCard = ({ project, index }: ProjectCardProps) => {
+const ProjectCard = ({ project, index, id }: ProjectCardProps) => {
   return (
-    <div>
-      <Tilt className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-[300px] mr-3">
-        <div className="relative w-full h-[230px]">
+    <div id={id}>
+      <div className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-[300px] h-[512px] mr-3">
+        <div
+          className="relative w-full h-[230px] cursor-pointer"
+          onClick={() => window.open(project.live_link, "_blank")}
+        >
           <img
             src={project.image}
             alt={project.name}
@@ -46,7 +51,9 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         </div>
         <div className="mt-5">
           <h3 className="text-white font-bold text-[24px]">{project.name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{project.description}</p>
+          <p className="mt-2 text-secondary text-[14px]">
+            {project.description}
+          </p>
         </div>
         <div className="mt-4 flex flex-wrap gap-2 p-6">
           {project.tags.map((tag) => (
@@ -55,12 +62,43 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             </p>
           ))}
         </div>
-      </Tilt>
+      </div>
     </div>
   );
 };
 
 const Works = (): JSX.Element => {
+
+  useEffect(() => {
+    const container = document.getElementById("container");
+    let isDown = false;
+    let startX: number;
+    let scrollLeft: number;
+
+    if (container) {
+      container.addEventListener("mousedown", (e) => {
+        isDown = true;
+        container.classList.add("active");
+        
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+      });
+      container.addEventListener("mouseup", () => {
+        isDown = false;
+        container.classList.remove("active");
+      });
+      container.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = x - startX; //scroll-fast
+        container.scrollLeft = scrollLeft - walk;
+      });
+    }
+  }, []);
+
+ 
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -78,9 +116,13 @@ const Works = (): JSX.Element => {
           stuff and also reflect my ability to solve complex problems.
         </motion.p>
       </div>
-      <div className="flex overflow-x-scroll snap-x snap-mandatory snap-start">
+      <div
+        id="container"
+        className="flex overflow-x-scroll transition-all duration-500"
+      >
         {projects.map((project, index) => (
           <ProjectCard
+            id="card"
             key={`project-${index}`}
             index={index}
             project={project}
