@@ -1,61 +1,17 @@
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import {
-  Decal,
-  Float,
-  OrbitControls,
-  Preload,
-  useTexture,
-} from "@react-three/drei";
-
-import CanvasLoader from "../Loader";
-
-interface BallProps {
-  icon: string;
-}
+import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../utils/motion";
 
 const Ball = (props: any) => {
-  const [decal] = useTexture([props.imgUrl]);
-
   return (
-    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-      <ambientLight intensity={0.25} />
-      <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShadow scale={2.75}>
-        <icosahedronGeometry args={[1, 1]} />
-        <meshStandardMaterial
-          color='#fff8eb'
-          polygonOffset
-          polygonOffsetFactor={-5}
-          flatShading
-        />
-        <Decal
-          position={[0, 0, 1]}
-          rotation={[2 * Math.PI, 0, 6.25]}
-          scale={1}
-          map={decal}
-          flatShading
-        />
-      </mesh>
-    </Float>
+    <Tilt className='w-auto rounded-full'>
+      <motion.div variants={fadeIn('right', 'spring', 0.5 * props.index, 0.75)} className='w-full green-pink-gradient p-[1px] rounded-full shadow-card'>
+        <div className='bg-tertiary rounded-full py-5 px-5 flex justify-evenly items-center flex-col'>
+          <img src={props.imgUrl} alt={props.title} className='w-16 h-16 object-contain' />
+        </div>
+      </motion.div>
+    </Tilt>
   );
 };
 
-const BallCanvas = ({ icon }: BallProps) => {
-  return (
-    <Canvas
-      frameloop='demand'
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
-        <Ball imgUrl={icon} />
-      </Suspense>
-
-      <Preload all />
-    </Canvas>
-  );
-};
-
-export default BallCanvas;
+export default Ball;

@@ -1,5 +1,4 @@
-import React from "react";
-import { BallCanvas } from "./canvas";
+import { Ball } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 import { motion } from "framer-motion";
@@ -13,11 +12,9 @@ const Tech = (): JSX.Element => {
         <p className={styles.sectionSubText}>MY KNOWLEDGE</p>
         <h2 className={styles.sectionHeadText}>Skills</h2>
       </motion.div>
-      <div className="flex flex-row flex-wrap justify-center gap-10">
+      <div className="flex flex-row flex-wrap justify-center gap-10 mt-2">
         {technologies.map((tech, index) => (
-          <div className="w-28 h-28" key={tech.name}>
-            <BallCanvas icon={tech.icon} />
-          </div>
+          <Ball key={index} index={index} imgUrl={tech.icon} title={tech.name} />
         ))}
       </div>
     </>
