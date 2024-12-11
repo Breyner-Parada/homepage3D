@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { enqueueSnackbar } from "notistack";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
@@ -25,30 +26,31 @@ const Contact = (): JSX.Element => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    emailjs.send(
-      import.meta.env.VITE_SERVICE,
-      import.meta.env.VITE_TEMPLATE,
-      {
+    emailjs
+      .send(import.meta.env.VITE_SERVICE, import.meta.env.VITE_TEMPLATE, {
         from_name: formState.name,
         to_name: "Breyner Parada",
         from_email: formState.email,
         to_email: import.meta.env.VITE_EMAIL,
         message: formState.message,
-      },
-      import.meta.env.VITE_PUBLIC_KEY
-    ).then(() => {
-      setLoading(false);
-      alert("Message sent successfully!, I'll get back to you as soon as possible.");
-      setFormState({
-        name: "",
-        email: "",
-        message: "",
+      })
+      .then(() => {
+        setLoading(false);
+        enqueueSnackbar("Message sent successfully!", {
+          variant: "success",
+        });
+        setFormState({
+          name: "",
+          email: "",
+          message: "",
+        });
+      })
+      .catch(() => {
+        setLoading(false);
+        enqueueSnackbar("Failed to send message!", {
+          variant: "error",
+        });
       });
-    })
-    .catch(() => {
-      setLoading(false);
-      alert("Something went wrong, please try again later.");
-    })
   };
 
   return (
