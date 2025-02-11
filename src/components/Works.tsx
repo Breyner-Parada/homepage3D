@@ -103,7 +103,7 @@ const Works = (): JSX.Element => {
         spaceBetween={5}
         slidesPerView={3}
         breakpoints={{
-          425: {
+          375: {
             slidesPerView: 1,
             spaceBetween: 5,
           },
