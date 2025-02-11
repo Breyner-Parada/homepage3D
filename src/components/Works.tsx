@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
-import Tilt from "react-parallax-tilt";
+import { useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import "swiper/css";
+import "swiper/css/navigation";
 
 interface ProjectCardProps {
   project: {
@@ -26,7 +29,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, index, id }: ProjectCardProps) => {
   return (
     <div id={id}>
-      <div className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-[300px] h-[512px] mr-3">
+      <div className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[512px] mr-3">
         <div
           className="relative w-full h-[230px] cursor-pointer"
           onClick={() => window.open(project.live_link, "_blank")}
@@ -68,37 +71,6 @@ const ProjectCard = ({ project, index, id }: ProjectCardProps) => {
 };
 
 const Works = (): JSX.Element => {
-
-  useEffect(() => {
-    const container = document.getElementById("container");
-    let isDown = false;
-    let startX: number;
-    let scrollLeft: number;
-
-    if (container) {
-      container.addEventListener("mousedown", (e) => {
-        isDown = true;
-        container.classList.add("active");
-        
-        startX = e.pageX - container.offsetLeft;
-        scrollLeft = container.scrollLeft;
-      });
-      container.addEventListener("mouseup", () => {
-        isDown = false;
-        container.classList.remove("active");
-      });
-      container.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - container.offsetLeft;
-        const walk = x - startX; //scroll-fast
-        container.scrollLeft = scrollLeft - walk;
-      });
-    }
-  }, []);
-
- 
-
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -116,19 +88,45 @@ const Works = (): JSX.Element => {
           stuff and also reflect my ability to solve complex problems.
         </motion.p>
       </div>
-      <div
-        id="container"
-        className="flex overflow-x-scroll transition-all duration-500"
+
+      <Swiper
+        style={{
+          width: "100%",
+          height: "auto",
+          marginTop: "3rem",
+          marginBottom: "3rem",
+        }}
+        grabCursor
+        modules={[Pagination]}
+        loop
+        pagination={true}
+        spaceBetween={5}
+        slidesPerView={3}
+        breakpoints={{
+          425: {
+            slidesPerView: 1,
+            spaceBetween: 5,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 5,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 5,
+          },
+        }}
       >
         {projects.map((project, index) => (
-          <ProjectCard
-            id="card"
-            key={`project-${index}`}
-            index={index}
-            project={project}
-          />
+          <SwiperSlide key={index}>
+            <ProjectCard
+              project={project}
+              index={index}
+              id={`project-${index}`}
+            />
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </>
   );
 };
