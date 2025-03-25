@@ -31,6 +31,7 @@ import {
     flashback,
     movieapp,
     toctoc,
+    three,
   } from "../assets";
   
   export const navLinks = [
@@ -228,7 +229,7 @@ import {
       ],
       image: todo,
       source_code_link: "https://github.com/Breyner-Parada/reactjs",
-      live_link: 'https://breyner-parada.github.io/reactjs'
+      live_link: "https://breyner-parada.github.io/reactjs",
     },
     {
       name: "Movie App",
@@ -246,7 +247,7 @@ import {
       ],
       image: movieapp,
       source_code_link: "https://github.com/Breyner-Parada/movieapp",
-      live_link: 'https://breyner-parada.github.io/movieapp'
+      live_link: "https://breyner-parada.github.io/movieapp",
     },
     {
       name: "Chat App",
@@ -264,7 +265,7 @@ import {
       ],
       image: chatapp,
       source_code_link: "https://github.com/Breyner-Parada/chatapp",
-      live_link: 'https://youwannatalk.netlify.app'
+      live_link: "https://youwannatalk.netlify.app",
     },
     {
       name: "FlashBack App",
@@ -276,8 +277,8 @@ import {
           color: "blue-text-gradient",
         },
         {
-          name:'mongodb',
-          color:'green-text-gradient'
+          name: "mongodb",
+          color: "green-text-gradient",
         },
         {
           name: "sass",
@@ -290,7 +291,7 @@ import {
       ],
       image: flashback,
       source_code_link: "https://github.com/Breyner-Parada/flashback",
-      live_link: 'https://breyner-parada.github.io/flashback'
+      live_link: "https://breyner-parada.github.io/flashback",
     },
     {
       name: "Toc Toc App",
@@ -312,7 +313,7 @@ import {
       ],
       image: toctoc,
       source_code_link: "https://github.com/Breyner-Parada/toctoc",
-      live_link: 'https://toctoc-ten.vercel.app/'
+      live_link: "https://toctoc-ten.vercel.app/",
     },
     {
       name: "Dashboard App",
@@ -334,7 +335,29 @@ import {
       ],
       image: dashboard,
       source_code_link: "https://github.com/Breyner-Parada/dashboard",
-      live_link: 'https://my-tablero.netlify.app/'
+      live_link: "https://my-tablero.netlify.app/",
+    },
+    {
+      name: "ThreeJs Examples",
+      description:
+        "Some examples of 3D animations and 3D objects using ThreeJs library",
+      tags: [
+        {
+          name: "threejs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "ReactJs",
+          color: "green-text-gradient",
+        },
+        {
+          name: "tailwindcss",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: three,
+      source_code_link: "https://github.com/Breyner-Parada/threejsexamples",
+      live_link: "https://threejsexamples.vercel.app/",
     },
   ];
   

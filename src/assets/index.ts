@@ -37,6 +37,7 @@ import dashboard from './Dashboard.png';
 import flashback from './Flashback.png';
 import movieapp from './MovieApp.png';
 import toctoc from './TocToc.png';
+import three from "./three.png";
 
 export {
   logo,
@@ -74,5 +75,6 @@ export {
   dashboard,
   flashback,
   movieapp,
-  toctoc
+  toctoc,
+  three,
 };
