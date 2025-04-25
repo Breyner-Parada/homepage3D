@@ -33,7 +33,7 @@ const About = (): JSX.Element => {
         <h2 className={styles.sectionHeadText}>Overview</h2>
       </motion.div>
       <motion.p variants={fadeIn('', '', 0.1, 1)} className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'>
-        I'm a <span className='text-[#915eff]'>Metallurgical Engineer</span> from <span className='text-[#915eff]'>Colombia</span> and <span className='text-[#915eff]'>Full Stack Developer</span> who is passionate about making open-source more accessible, creating technology to elevate people, and building community. Some technologies I enjoy working with include ReactJS, NodeJS, NextJS and much more.
+        I'm a <span className='text-[#915eff]'>Metallurgical Engineer</span> from <span className='text-[#915eff]'>Colombia</span> and <span className='text-[#915eff]'>Full Stack Developer</span> who is passionate about making open-source more accessible, creating technology to elevate people, and building community. Some technologies I enjoy working with include ReactJS, TypeScript, NodeJS, NextJS, Tailwind, ThreeJs, React Native and much more.
       </motion.p>
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (
