@@ -38,6 +38,7 @@ import flashback from './Flashback.png';
 import movieapp from './MovieApp.png';
 import toctoc from './TocToc.png';
 import three from "./three.png";
+import awward from "./awward.png";
 
 export {
   logo,
@@ -77,4 +78,5 @@ export {
   movieapp,
   toctoc,
   three,
+  awward,
 };
