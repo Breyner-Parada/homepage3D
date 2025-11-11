@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { SnackbarProvider } from "notistack";
+import ChatBot from "./components/ChatBot";
 
 import {
   About,
@@ -37,6 +38,7 @@ function App(): JSX.Element {
           </div>
         </div>
       </SnackbarProvider>
+      <ChatBot />
     </BrowserRouter>
   );
 }

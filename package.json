@@ -11,18 +11,22 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
+    "@openrouter/sdk": "^0.1.9",
     "@react-three/drei": "^9.57.3",
     "@react-three/fiber": "^8.12.0",
     "framer-motion": "^10.6.1",
     "homepage3d": "file:",
     "maath": "^0.5.3",
     "notistack": "^3.0.1",
+    "openai": "^6.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
     "react-parallax-tilt": "^1.7.118",
     "react-router-dom": "^6.9.0",
     "react-vertical-timeline-component": "^3.6.0",
-    "swiper": "^11.2.2"
+    "swiper": "^11.2.2",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

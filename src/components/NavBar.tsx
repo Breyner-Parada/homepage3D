@@ -35,7 +35,17 @@ const Navbar = (): JSX.Element => {
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              {link.title === "CV" ? (
+                <a
+                  href="https://drive.google.com/file/d/1mVoFYqHQYeyEf4k3w3qZoJol9LRRutcl/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.title}
+                </a>
+              ) : (
+                <a href={`#${link.id}`}>{link.title}</a>
+              )}
             </li>
           ))}
         </ul>
@@ -47,7 +57,7 @@ const Navbar = (): JSX.Element => {
             className="w-7 h-7 object-contain cursor-pointer"
             onClick={() => setToggle((prev) => !prev)}
           />
-          
+
           <div
             className={`${
               !toggle ? "hidden" : "flex"
