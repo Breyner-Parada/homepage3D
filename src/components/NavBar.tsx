@@ -75,7 +75,17 @@ const Navbar = (): JSX.Element => {
                     setActive(link.title);
                   }}
                 >
-                  <a href={`#${link.id}`}>{link.title}</a>
+                  {link.title === "CV" ? (
+                    <a
+                      href="https://drive.google.com/file/d/1mVoFYqHQYeyEf4k3w3qZoJol9LRRutcl/view?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.title}
+                    </a>
+                  ) : (
+                    <a href={`#${link.id}`}>{link.title}</a>
+                  )}
                 </li>
               ))}
             </ul>
