@@ -1,13 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 import { OpenRouter } from "@openrouter/sdk";
 import { BsRobot } from "react-icons/bs";
+import { IoIosSend } from "react-icons/io";
 import Loading from "./Loading";
 // import OpenAI from "openai";
 
 // Workaround for react-icons type incompatibility with some TypeScript setups:
 // cast the imported icon to a React component type so it can be used in JSX.
 const RobotIcon = BsRobot as unknown as React.ComponentType<{ size?: number }>;
+const SendIcon = IoIosSend as unknown as React.ComponentType<{ size?: number }>;
 
 /**
  * ChatBot.tsx
@@ -166,7 +169,7 @@ export default function ChatBot() {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 z-[9999]">
+    <div className="fixed bottom-4 right-4">
       {/* Chat panel */}
       <motion.div
         initial={{ opacity: 0, y: 8, scale: 0.98 }}
@@ -176,7 +179,7 @@ export default function ChatBot() {
             : { opacity: 0, y: 8, scale: 0.98 }
         }
         transition={{ duration: 0.18 }}
-        className="mb-3"
+        className={clsx("mb-3", !isOpen && "hidden", "relative z-[9999]")}
         aria-hidden={!isOpen}
       >
         <div className="w-[360px] max-w-[calc(100%-32px)] shadow-lg rounded-xl overflow-hidden font-sans bg-white">
@@ -237,22 +240,22 @@ export default function ChatBot() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask about this site..."
-              className="flex-1 p-2 rounded-lg border border-gray-200 text-sm disabled:opacity-50"
+              className="p-2 rounded-lg border border-gray-200 text-sm disabled:opacity-50 w-full"
               disabled={loading}
             />
             <button
               type="submit"
               disabled={loading}
-              className="px-3 py-2 rounded-lg bg-[#804dee] text-white font-semibold disabled:opacity-50"
+              className="px-3 py-2 rounded-lg bg-[#804dee] text-white font-semibold disabled:opacity-50 "
             >
-              Send
+              <SendIcon size={20} />
             </button>
           </form>
         </div>
       </motion.div>
 
       {/* Toggle button */}
-      <div className="flex items-center justify-end relative">
+      <div className="flex items-center justify-end relative z-[9999]">
         <motion.button
           type="button"
           onClick={() => setIsOpen((s) => !s)}
