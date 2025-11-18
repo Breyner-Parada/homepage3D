@@ -129,7 +129,7 @@ export default function ChatBot() {
           "\n---PAGE CONTENT END---",
       };
 
-      const model = "meta-llama/llama-4-maverick:free"; // OpenRouter model
+      const model = "kwaipilot/kat-coder-pro:free"; // OpenRouter model
 
       // Create the chat completion via OpenRouter SDK
       const resp = await openRouter.chat.send({
@@ -160,7 +160,7 @@ export default function ChatBot() {
         {
           id: uid(),
           role: "assistant",
-          content: `Error: ${err?.message || err}`,
+          content: `Oops, something went wrong. Please try again later.`,
         },
       ]);
     } finally {
