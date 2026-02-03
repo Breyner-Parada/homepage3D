@@ -129,7 +129,7 @@ export default function ChatBot() {
           "\n---PAGE CONTENT END---",
       };
 
-      const model = "kwaipilot/kat-coder-pro:free"; // OpenRouter model
+      const model = "arcee-ai/trinity-large-preview:free"; // OpenRouter model
 
       // Create the chat completion via OpenRouter SDK
       const resp = await openRouter.chat.send({
