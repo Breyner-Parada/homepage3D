@@ -32,6 +32,7 @@ import {
   toctoc,
   three,
   awward,
+  metalcal,
 } from "../assets";
   
   export const navLinks = [
@@ -389,6 +390,32 @@ import {
       source_code_link:
         "https://github.com/Breyner-Parada/awwward-site-example",
       live_link: "https://zentry-clone-example.vercel.app/",
+    },
+    {
+      name: "Metal Cal",
+      description:
+        "MetalCal provides quick calculations for metallurgical processes—deformation, diffusion, energy, mass balance, phases, and solidification—so you can estimate key parameters for material processing.",
+      tags: [
+        {
+          name: "Nextjs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "ReactJs",
+          color: "green-text-gradient",
+        },
+        {
+          name: "tailwindcss",
+          color: "pink-text-gradient",
+        },
+        {
+          name: "gsap",
+          color: "orange-text-gradient",
+        },
+      ],
+      image: metalcal,
+      source_code_link: "https://github.com/Breyner-Parada/metalCalc",
+      live_link: "https://metal-calc-green.vercel.app/",
     },
   ];
   

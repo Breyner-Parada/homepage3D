@@ -39,6 +39,7 @@ import movieapp from './MovieApp.png';
 import toctoc from './TocToc.png';
 import three from "./three.png";
 import awward from "./awward.png";
+import metalcal from "./metalcal.png";
 
 export {
   logo,
@@ -79,4 +80,5 @@ export {
   toctoc,
   three,
   awward,
+  metalcal,
 };
