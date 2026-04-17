@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Privacy Policy — Breyner Dev</title>
+    <link rel="stylesheet" href="/privacy.css" />
+  </head>
+  <body class="pp-body">
+    <header class="pp-hero">
+      <div class="pp-hero-inner">
+        <h1 class="pp-title">Privacy Policy</h1>
+        <p class="pp-subtitle">
+          Clear, focused privacy choices for personalized ads and analytics.
+        </p>
+        <a class="pp-cta" href="#consent">Manage Consent</a>
+      </div>
+    </header>
+
+    <main class="pp-main">
+      <section class="pp-card">
+        <h2>What we collect</h2>
+        <p>
+          We collect minimal data required to operate and improve the service,
+          such as device identifiers, advertising IDs, usage analytics, and
+          performance metrics.
+        </p>
+      </section>
+
+      <section class="pp-card">
+        <h2>How we use data</h2>
+        <p>
+          Data is used to deliver and measure services, personalize content and
+          ads, and detect issues. We share limited data with advertising
+          partners (for example, AdMob) to serve and measure ads.
+        </p>
+      </section>
+
+      <section class="pp-grid">
+        <div class="pp-card">
+          <h3>EU / GDPR</h3>
+          <p>
+            Users in the EEA and UK may grant or withdraw consent for ad
+            personalization. Use the consent controls below or contact us.
+          </p>
+        </div>
+        <div class="pp-card">
+          <h3>US / CCPA</h3>
+          <p>
+            California residents may request access, deletion, or opt-out of
+            sale. Use the controls or contact us at privacy@example.com.
+          </p>
+        </div>
+      </section>
+
+      <section class="pp-card">
+        <h2>Children</h2>
+        <p>
+          This service is not intended for children under 13. We do not
+          knowingly collect personal data from children under 13.
+        </p>
+      </section>
+
+      <section id="consent" class="pp-card pp-consent-panel">
+        <h2>Manage Consent</h2>
+        <p>
+          Use the controls below to opt in or out of personalized advertising.
+          This page works alongside platform SDKs — if you integrate AdMob into
+          an app, follow Google's UMP guidance.
+        </p>
+        <div class="pp-actions">
+          <button id="pp-accept" class="btn btn-primary">
+            Accept Personalized Ads
+          </button>
+          <button id="pp-decline" class="btn">Decline Personalized Ads</button>
+        </div>
+        <p class="pp-note">
+          Note: This web consent is separate from any mobile SDK consent
+          required by app stores.
+        </p>
+      </section>
+
+      <footer class="pp-footer">
+        <div>Contact: libritania95@gmail.com</div>
+        <div>Last updated: April 2026</div>
+      </footer>
+    </main>
+
+    <script src="/consent-banner.js"></script>
+    <script>
+      // Bind local buttons to the same consent storage used by the banner
+      document.getElementById("pp-accept").addEventListener("click", () => {
+        localStorage.setItem(
+          "site_consent_v1",
+          JSON.stringify({ accepted: true, ts: Date.now() }),
+        );
+        alert("Thank you — consent saved.");
+      });
+      document.getElementById("pp-decline").addEventListener("click", () => {
+        localStorage.setItem(
+          "site_consent_v1",
+          JSON.stringify({ accepted: false, ts: Date.now() }),
+        );
+        alert("Preferences saved.");
+      });
+    </script>
+    <div class="pp-hero-decor">
+      <svg viewBox="0 0 800 200" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0" stop-color="#7dd3fc" />
+            <stop offset="1" stop-color="#60a5fa" />
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#g)"
+          d="M0,200 C150,100 350,100 500,160 C650,220 800,80 800,80 L800,200 Z"
+        />
+      </svg>
+    </div>
+  </body>
+</html>
